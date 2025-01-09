@@ -53,6 +53,7 @@ public class UndoAction extends AbstractViewAction {
      */
     public UndoAction(Application app, View view) {
         super(app, view);
+        System.out.println("2nd undo action triggered");
         labels.configureAction(this, ID);
     }
 
@@ -103,6 +104,7 @@ public class UndoAction extends AbstractViewAction {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("UndoAction triggered");
         Action realUndoAction = getRealUndoAction();
         if (realUndoAction != null && realUndoAction != this) {
             realUndoAction.actionPerformed(e);

@@ -228,6 +228,7 @@ public class UndoRedoManager extends UndoManager { //javax.swing.undo.UndoManage
                     + " canUndo=" + canUndo() + " canRedo=" + canRedo());
         }
         if (canUndo()) {
+            System.out.println("Trigger from UndoRedoManager");
             undoAction.setEnabled(true);
             label = getUndoPresentationName();
         } else {
@@ -258,6 +259,7 @@ public class UndoRedoManager extends UndoManager { //javax.swing.undo.UndoManage
         undoOrRedoInProgress = true;
         try {
             super.undo();
+            System.out.println("Trigger from Undo method in UndoRedoManager");
         } finally {
             undoOrRedoInProgress = false;
             updateActions();
